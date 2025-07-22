@@ -1,0 +1,129 @@
+---
+// Puedes agregar props aquí si necesitas hacer el componente dinámico
+---
+
+<section class="py-16 lg:py-24 bg-white">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
+      <!-- Contenido de texto -->
+      <div class="space-y-8">
+        <!-- Línea decorativa -->
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"></div>
+        
+        <!-- Título principal -->
+        <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+          Empresas líderes confían en nosotros para desarrollar software
+        </h2>
+        
+        <!-- Descripción -->
+        <div class="space-y-6 text-gray-600 text-lg lg:text-xl leading-relaxed">
+          <p>
+            Aportamos capacidad de desarrollo a los equipos técnicos. Nuestro valor no se limita a la creación de equipos, sino que se distribuye equitativamente a lo largo del ciclo de vida del proyecto.
+          </p>
+          <p>
+            Somos una empresa de desarrollo de software a medida que garantiza la entrega exitosa de su proyecto.
+          </p>
+        </div>
+      </div>
+
+      <!-- Imagen con botón de reproducir -->
+      <div class="relative group">
+        <div class="relative overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl">
+          <!-- Imagen de fondo -->
+          <img 
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Equipo de desarrollo trabajando en proyecto de software"
+            class="w-full h-64 lg:h-80 xl:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          
+          <!-- Overlay oscuro -->
+          <div class="absolute inset-0 bg-black bg-opacity-20 transition-opacity duration-300 group-hover:bg-opacity-30"></div>
+          
+          <!-- Botón de reproducir -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button 
+              class="play-button group/btn relative w-16 h-16 lg:w-20 lg:h-20 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-purple-300"
+              aria-label="Reproducir video"
+            >
+              <!-- Efecto de pulso -->
+              <div class="absolute inset-0 rounded-full bg-purple-600 animate-ping opacity-20"></div>
+              
+              <!-- Icono de play -->
+              <svg 
+                class="w-6 h-6 lg:w-8 lg:h-8 text-white ml-1 transition-transform duration-300 group-hover/btn:scale-110" 
+                fill="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Brillo decorativo -->
+          <div class="absolute top-4 right-4 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-xl"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enlace "Ver más información" -->
+    <div class="mt-12 lg:mt-16">
+      <a 
+        href="#mas-informacion" 
+        class="inline-flex items-center gap-3 text-purple-600 hover:text-purple-700 font-semibold text-lg transition-all duration-300 group/link hover:gap-4"
+      >
+        <span>Ver más información</span>
+        <svg 
+          class="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animación del botón de play */
+  .play-button::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(45deg, transparent, rgba(147, 51, 234, 0.3), transparent);
+    border-radius: inherit;
+    animation: rotate 3s linear infinite;
+    z-index: -1;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Efecto hover en la imagen */
+  @media (min-width: 1024px) {
+    .group:hover .play-button {
+      transform: scale(1.1);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .play-button {
+      width: 4rem;
+      height: 4rem;
+    }
+    
+    .play-button svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+</style>

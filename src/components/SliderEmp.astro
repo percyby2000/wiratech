@@ -1,0 +1,133 @@
+---
+// Array de logos de empresas
+const empresas = [
+  {
+    nombre: "Sampath Dream House",
+    logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=100&fit=crop&crop=center",
+    alt: "Logo Sampath Dream House"
+  },
+  {
+    nombre: "AdClipse",
+    logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=100&fit=crop&crop=center",
+    alt: "Logo AdClipse"
+  },
+  {
+    nombre: "PJC Bridge",
+    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&crop=center",
+    alt: "Logo PJC Bridge"
+  },
+  {
+    nombre: "ClickOrder",
+    logo: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&h=100&fit=crop&crop=center",
+    alt: "Logo ClickOrder"
+  },
+  {
+    nombre: "TechMate",
+    logo: "https://images.unsplash.com/photo-1633409361618-c73427e4e206?w=200&h=100&fit=crop&crop=center",
+    alt: "Logo TechMate"
+  },
+  {
+    nombre: "Digital Solutions",
+    logo: "https://images.unsplash.com/photo-1560472355-109703aa3edc?w=200&h=100&fit=crop&crop=center",
+    alt: "Logo Digital Solutions"
+  },
+  {
+    nombre: "Tech Innovate",
+    logo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=200&h=100&fit=crop&crop=center",
+    alt: "Logo Tech Innovate"
+  },
+  {
+    nombre: "Cloud Systems",
+    logo: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=200&h=100&fit=crop&crop=center",
+    alt: "Logo Cloud Systems"
+  }
+];
+
+// Duplicamos los logos para el efecto infinito
+const logosDuplicados = [...empresas, ...empresas, ...empresas];
+---
+
+<section class="py-16 lg:py-5 bg-gradient-to-br from-gray-50 via-white to-purple-50">
+  <div class="container mx-auto px-4 lg:px-8">
+    
+    <!-- Header con título -->
+    <div class="mb-12 lg:mb-16">
+      <!-- Línea decorativa -->
+      <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mb-6"></div>
+      
+      <!-- Título -->
+      <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight max-w-2xl">
+        Conosca a las personas
+        <br>
+        <span class="text-gray-700">con las que trabajamos</span>
+      </h2>
+    </div>
+
+    <!-- Cinta de logos con movimiento automático -->
+    <div class="relative overflow-hidden">
+      <!-- Gradientes de desvanecimiento -->
+      <div class="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 via-white to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 via-white to-transparent z-10 pointer-events-none"></div>
+      
+      <!-- Track de logos con animación infinita -->
+      <div class="logos-track flex gap-8 lg:gap-12 animate-scroll">
+        {logosDuplicados.map((empresa, index) => (
+          <div class="flex-shrink-0 w-32 lg:w-40 xl:w-44 group">
+            <div class="h-16 lg:h-20 flex items-center justify-center p-3 lg:p-4 transition-all duration-300 hover:scale-110">
+              <img
+                src={empresa.logo}
+                alt={empresa.alt}
+                class="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Texto descriptivo centrado -->
+    <div class="text-center mt-12 lg:mt-16">
+      <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+        Colaboramos con empresas líderes en tecnología para entregar soluciones de software innovadoras y de alta calidad.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animación de scroll infinito */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 25s linear infinite;
+  }
+
+  /* Pausar animación al hacer hover sobre la sección */
+  section:hover .animate-scroll {
+    animation-play-state: paused;
+  }
+
+  /* Ajuste responsive para móviles */
+  @media (max-width: 768px) {
+    .animate-scroll {
+      animation: scroll 20s linear infinite;
+    }
+    
+    .logos-track {
+      gap: 1.5rem;
+    }
+  }
+
+  /* Efecto suave en los logos */
+  .group:hover img {
+    filter: brightness(1.1) saturate(1.2);
+  }
+</style>

@@ -1,0 +1,118 @@
+---
+//header.astro
+--- 
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200/50 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <div class="flex-shrink-0 flex items-center">
+          
+            <img src="/logosinfondo.svg" alt="Wira Logo" class="w-10 h-10  rounded-lg p-1transition duration-300" />
+
+          
+          <span class="text-gray-900 text-xl font-semibold">
+            ira
+          </span>
+          <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+            Tech
+          </span>
+        </div>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#" class="text-gray-900 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group">
+          Inicio
+          <span class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+        </a>
+        <a href="#" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group">
+          Software
+          <span class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+        </a>
+        <a href="#" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group">
+          Tecnología
+          <span class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+        </a>
+        <a href="#" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group">
+          Servicios
+          <span class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+        </a>
+        <a href="#" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group">
+          Contacto
+          <span class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+        </a>
+        <a href="#" class="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-6 py-2 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-blue-600 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          Solicitar Demo
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Menu -->
+      <div class="md:hidden">
+        <input type="checkbox" id="menu-toggle" class="peer hidden">
+        <label for="menu-toggle" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-600 transition-colors duration-200 cursor-pointer">
+          <!-- Hamburger Icon -->
+          <svg class="h-6 w-6 peer-checked:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <!-- Close Icon -->
+          <svg class="h-6 w-6 hidden peer-checked:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </label>
+
+        <!-- Mobile Menu -->
+        <div class="peer-checked:block hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
+          <div class="px-4 py-6 space-y-4">
+            <a href="#" class="block px-4 py-3 text-gray-900 hover:bg-gray-100 hover:text-purple-600 rounded-lg transition-colors duration-200 font-medium">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                Inicio
+              </div>
+            </a>
+            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-purple-600 rounded-lg transition-colors duration-200 font-medium">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Software
+              </div>
+            </a>
+            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-purple-600 rounded-lg transition-colors duration-200 font-medium">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                </svg>
+                Tecnología
+              </div>
+            </a>
+            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-purple-600 rounded-lg transition-colors duration-200 font-medium">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+                Servicios
+              </div>
+            </a>
+            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-purple-600 rounded-lg transition-colors duration-200 font-medium">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                Contacto
+              </div>
+            </a>
+            <div class="pt-4 border-t border-gray-200">
+              <a href="#" class="w-full bg-gradient-to-r from-purple-600 to-blue-500 text-white px-6 py-3 rounded-lg text-center font-medium hover:from-purple-700 hover:to-blue-600 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl block">
+                Solicitar Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
