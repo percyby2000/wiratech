@@ -1,0 +1,104 @@
+---
+// Array de servicios con imagen grande, título y descripción
+const servicios = [
+  {
+    titulo: "Desarrollo de Software a Medida",
+    descripcion: "Creamos soluciones de software personalizadas para tu negocio, optimizando procesos y potenciando tu crecimiento.",
+    imagen: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    alt: "Desarrollo de software"
+  },
+  {
+    titulo: "Sitios Web Profesionales",
+    descripcion: "Diseñamos y desarrollamos sitios web modernos, responsivos y optimizados para SEO.",
+    imagen: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+    alt: "Sitios web"
+  },
+  {
+    titulo: "Aplicaciones Móviles",
+    descripcion: "Lleva tu negocio a la palma de la mano de tus clientes con apps móviles para Android y iOS.",
+    imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
+    alt: "Aplicaciones móviles"
+  },
+  {
+    titulo: "Asesoría Tecnológica",
+    descripcion: "Te ayudamos a elegir y aplicar la mejor tecnología para tu empresa, con soporte y acompañamiento continuo.",
+    imagen: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    alt: "Asesoría tecnológica"
+  }
+];
+
+// Duplicamos los servicios para el efecto infinito
+const serviciosDuplicados = [...servicios, ...servicios];
+---
+
+<section class="py-16 bg-gradient-to-br from-purple-50 via-white to-blue-50">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="mb-12 text-center">
+      <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mx-auto mb-6"></div>
+      <h2 class="text-4xl font-bold text-gray-900 leading-tight">
+        Nuestros Servicios
+      </h2>
+      <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+        Soluciones digitales para impulsar tu negocio: software, web y apps.
+      </p>
+    </div>
+    <div class="relative overflow-hidden">
+      <div class="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-purple-50 via-white to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-blue-50 via-white to-transparent z-10 pointer-events-none"></div>
+      <div class="servicios-track flex gap-12 animate-scroll-servicios">
+        {serviciosDuplicados.map((servicio, index) => (
+          <div class="flex-shrink-0 w-[350px] lg:w-[420px] xl:w-[500px] group">
+            <div class="rounded-3xl shadow-lg bg-white overflow-hidden transition-all duration-300 hover:scale-105">
+              <img
+                src={servicio.imagen}
+                alt={servicio.alt}
+                class="w-full h-64 object-cover object-center"
+                loading="lazy"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-semibold text-purple-700 mb-2">{servicio.titulo}</h3>
+                <p class="text-gray-600 text-base">{servicio.descripcion}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll-servicios {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-scroll-servicios {
+    animation: scroll-servicios 35s linear infinite;
+  }
+  section:hover .animate-scroll-servicios {
+    animation-play-state: paused;
+  }
+  @media (max-width: 1024px) {
+    .servicios-track {
+      gap: 2rem;
+    }
+    .flex-shrink-0 {
+      width: 320px !important;
+    }
+  }
+  @media (max-width: 640px) {
+    .servicios-track {
+      gap: 1rem;
+    }
+    .flex-shrink-0 {
+      width: 260px !important;
+    }
+    img {
+      height: 180px !important;
+    }
+  }
+</style> 
